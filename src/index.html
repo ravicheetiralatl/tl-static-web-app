@@ -27,29 +27,107 @@
 </script>
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Google Analytics Test Page</h1>
-    <p>This is a simple HTML page for testing Google Analytics tracking.</p>
+    <div class="container">
+        <h1>Google Analytics Test Page</h1>
+        <p>This is a simple HTML page for testing Google Analytics tracking.</p>
 
-    <!-- Links for Testing -->
-    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Homepage'}); return false;">Homepage</a><br>
-    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'About Us'}); return false;">About Us</a><br>
-    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Contact Us'}); return false;">Contact Us</a><br>
-    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Services'}); return false;">Services</a><br>
+        <!-- Links for Testing -->
+        <div class="links">
+            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Homepage'}); return false;">Homepage</a><br>
+            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'About Us'}); return false;">About Us</a><br>
+            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Contact Us'}); return false;">Contact Us</a><br>
+            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Services'}); return false;">Services</a><br>
+        </div>
 
-    <!-- Button for Testing -->
-    <button onclick="gtag('event', 'click', {'event_category': 'Button Click', 'event_label': 'Subscribe Button'});">Subscribe</button>
+        <!-- Button for Testing -->
+        <button onclick="gtag('event', 'click', {'event_category': 'Button Click', 'event_label': 'Subscribe Button'});">Subscribe</button>
 
-    <!-- Form for Testing -->
-    <form onsubmit="gtag('event', 'submit', {'event_category': 'Form Submission', 'event_label': 'Contact Form'}); return true;">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+        <!-- Form for Testing -->
+        <form onsubmit="gtag('event', 'submit', {'event_category': 'Form Submission', 'event_label': 'Contact Form'}); return true;">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
-
-
 </html>
