@@ -19,9 +19,26 @@
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
+    <h1>Google Analytics Test Page</h1>
+    <p>This is a simple HTML page for testing Google Analytics tracking.</p>
+
+    <!-- Links for Testing -->
+    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Homepage'}); return false;">Homepage</a><br>
+    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'About Us'}); return false;">About Us</a><br>
+    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Contact Us'}); return false;">Contact Us</a><br>
+    <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Services'}); return false;">Services</a><br>
+
+    <!-- Button for Testing -->
+    <button onclick="gtag('event', 'click', {'event_category': 'Button Click', 'event_label': 'Subscribe Button'});">Subscribe</button>
+
+    <!-- Form for Testing -->
+    <form onsubmit="gtag('event', 'submit', {'event_category': 'Form Submission', 'event_label': 'Contact Form'}); return true;">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
 </body>
+
 
 </html>
