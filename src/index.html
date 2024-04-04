@@ -24,6 +24,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-CHXDG6VH1G');
+
+
+        
+      function navigate(route) {
+        gtag('event', 'click', {'event_category': 'Navigation', 'event_label': route});
+        window.location.hash = route;
+        // You can also perform other actions here, such as updating the page content dynamically based on the route.
+      }
+  
 </script>
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
@@ -46,88 +55,55 @@
             margin-bottom: 20px;
         }
 
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #0056b3;
-        }
-
-        button {
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            border-radius: 4px 4px 0 0;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
-        button:hover {
+        .tab:hover {
             background-color: #0056b3;
         }
 
-        form {
-            margin-top: 20px;
+        .active {
+            background-color: #0056b3;
         }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+        .content {
+            background-color: #fff;
+            padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            border-radius: 0 0 4px 4px;
         }
 
-        textarea {
-            height: 100px;
-        }
-
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
+        .content p {
+            margin-bottom: 0;
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>Google Analytics Test Page</h1>
         <p>This is a simple HTML page for testing Google Analytics tracking.</p>
 
-        <!-- Links for Testing -->
-        <div class="links">
-            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Homepage'}); return false;">Homepage</a><br>
-            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'About Us'}); return false;">About Us</a><br>
-            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Contact Us'}); return false;">Contact Us</a><br>
-            <a href="#" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'Services'}); return false;">Services</a><br>
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <div class="tab" onclick="navigate('homepage')">Homepage</div>
+            <div class="tab" onclick="navigate('about_us')">About Us</div>
+            <div class="tab" onclick="navigate('contact_us')">Contact Us</div>
+            <div class="tab" onclick="navigate('services')">Services</div>
         </div>
 
-        <!-- Button for Testing -->
-        <button onclick="gtag('event', 'click', {'event_category': 'Button Click', 'event_label': 'Subscribe Button'});">Subscribe</button>
-
-        <!-- Form for Testing -->
-        <form onsubmit="gtag('event', 'submit', {'event_category': 'Form Submission', 'event_label': 'Contact Form'}); return true;">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea placeholder="Message"></textarea>
-            <input type="submit" value="Submit">
-        </form>
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Content for each tab goes here -->
+            <p>Content for the selected tab will appear here.</p>
+        </div>
     </div>
 </body>
 </html>
+
